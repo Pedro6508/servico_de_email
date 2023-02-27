@@ -1,0 +1,1 @@
+Criar um serviço de email a fim de aprender React, TypeScript e conceitos gerais de programação Web. 
