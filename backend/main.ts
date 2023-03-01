@@ -1,17 +1,3 @@
-export class CustomError extends Error {
-  statusCode = 400;
-
-  constructor(message: string) {
-    super(message);
-
-    Object.setPrototypeOf(this, CustomError.prototype);
-  }
-
-  getErrorMessage() {
-    return "Custom Error: " + this.message;
-  }
-}
-
 export function swap_sort(array: Array<number>): Array<number> {
   let i: number, record: number, count = 0;
   let end = false;

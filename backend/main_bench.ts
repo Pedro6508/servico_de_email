@@ -1,7 +1,7 @@
-import { simple_ordering } from "./main.ts";
+import { swap_sort } from "./main.ts";
 
 Deno.bench(function order() {
-  simple_ordering([9, 2, 3, 4, 2, 0]);
+  swap_sort([9, 2, 3, 4, 2, 0]);
 });
 
 // Deno.bench(function addBig() {
