@@ -1,4 +1,4 @@
-import { assertEquals } from "https://deno.land/std@0.178.0/testing/asserts.ts";
+import { assertEquals } from "standart";
 import { swap_sort } from "./main.ts";
 
 function random_int(scale: number, positive_only: boolean): number {
