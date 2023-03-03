@@ -41,7 +41,7 @@ function get_sorted_array(size: number, scale: number): Array<number> {
 }
 
 Deno.test(function orderTest() {
-  const scale = 1000000, max_size = 10000;
+  const scale = 1000000, max_size = 1000; // de 10 000 para 1 000 para diminuir a demora dos testes
   let i;
   let array: Array<number> = [];
 
@@ -55,4 +55,14 @@ Deno.test(function orderTest() {
       array,
     );
   }
+});
+
+Deno.test({
+  name: "File read",
+  permissions: { read: true },
+  fn: () => {
+    Deno.readTextFile("./read_test_dir/test.txt").then(
+      (value) => assertEquals(value, "Teste de leitura.\n"),
+    );
+  },
 });
