@@ -1,4 +1,4 @@
-export function swap_sort(array: Array<number>): Array<number> {
+export function swapSort(array: Array<number>): Array<number> {
   let i: number, record: number, count = 0;
   let end = false;
 
@@ -25,7 +25,7 @@ export function swap_sort(array: Array<number>): Array<number> {
       array[i] = array[i + 1];
       array[i + 1] = record;
 
-      array = swap_sort(array);
+      array = swapSort(array);
     }
   }
 
@@ -36,6 +36,6 @@ export function swap_sort(array: Array<number>): Array<number> {
 if (import.meta.main) {
   console.log(
     "Array inicial: [2, 6, 1, 9, 0, -1] | Array final: ",
-    swap_sort([2, 6, 1, 9, 0, -1]),
+    swapSort([2, 6, 1, 9, 0, -1]),
   );
 }

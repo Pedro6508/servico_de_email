@@ -1,5 +1,5 @@
 import { assertEquals } from "standart";
-import { swap_sort } from "./main.ts";
+import { swapSort } from "./main.ts";
 
 function random_int(scale: number, positive_only: boolean): number {
   if (Math.random() > 0.5 && positive_only == true) {
@@ -11,7 +11,7 @@ function random_int(scale: number, positive_only: boolean): number {
   return Math.floor(Math.random() * scale); // always return a number < scale
 }
 
-function get_random_array(array: Array<number>): Array<number> {
+function randomArray(array: Array<number>): Array<number> {
   let i: number,
     record: number,
     random_pos: number,
@@ -26,7 +26,7 @@ function get_random_array(array: Array<number>): Array<number> {
 
   return array;
 }
-function get_sorted_array(size: number, scale: number): Array<number> {
+function sortedArray(size: number, scale: number): Array<number> {
   let array: Array<number> = [];
   if (size > 0) {
     array.push(random_int(scale, false));
@@ -40,17 +40,17 @@ function get_sorted_array(size: number, scale: number): Array<number> {
   return array;
 }
 
-Deno.test(function orderTest() {
+Deno.test(function sortTest() {
   const scale = 1000000, max_size = 1000; // de 10 000 para 1 000 para diminuir a demora dos testes
   let i;
   let array: Array<number> = [];
 
   for (i = 0; i < max_size; i++) {
-    array = get_sorted_array(i, scale);
+    array = sortedArray(i, scale);
 
     assertEquals(
-      swap_sort(
-        get_random_array(array),
+      swapSort(
+        randomArray(array),
       ),
       array,
     );
@@ -58,7 +58,7 @@ Deno.test(function orderTest() {
 });
 
 Deno.test({
-  name: "File read",
+  name: "readFile",
   permissions: { read: true },
   fn: () => {
     Deno.readTextFile("./read_test_dir/test.txt").then(
